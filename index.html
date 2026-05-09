@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Creador de Catálogos Gritt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Gritt</h1>
+            <p>Creador de Catálogos</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="catalog-name">Nombre del Catálogo</label>
+                <input type="text" id="catalog-name" placeholder="Ej. Colección Verano 2026" style="text-transform: uppercase;">
+            </div>
+
+            <div class="input-group">
+                <label for="watermark-select">Marca de Agua</label>
+                <select id="watermark-select">
+                    <option value="blanco">Logo Blanco (Por defecto)</option>
+                    <option value="negro">Logo Negro</option>
+                </select>
+            </div>
+
+            <div class="upload-area" id="upload-area">
+                <label for="image-upload" class="upload-label">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <span>Sube tus fotos aquí (Toca para seleccionar)</span>
+                </label>
+                <input type="file" id="image-upload" accept="image/*" multiple>
+            </div>
+
+            <div class="preview-section">
+                <h2>Previsualización</h2>
+                <div class="preview-container" id="preview-container">
+                    <p class="empty-state">Sube imágenes para ver el resultado.</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="action-bar">
+            <button id="generate-btn" class="primary-btn">Descargar PDF</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="fondo_b64.js"></script>
+    <script src="logos_b64.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
